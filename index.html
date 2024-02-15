@@ -1,13 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alphabet Clash</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
+    <main class="bg-[#010313] bg-[url(images/background.png)] min-h-screen bg-no-repeat bg-center">
+        <section id="game-start" class="flex justify-center text-center items-center min-h-screen text-white ">
+            <!--Game start-->
+            <div class=" flex flex-col items-center gap-8">
+                <h1 class="text-4xl lg:text-9xl font-bold uppercase">
+                    Alphabet Clash
+                </h1>
+                <p class="text-xl">Unleash Your Keyboard Kung Fu : Press "Enter" to play</p>
+                <button onclick="start()" class="btn bg-white text-[#010313] text-xl">Play Now</button>
+            </div>
+        </section>
+        <section id="play-ground" class="hidden">
+            <!--Display-->
+            <div class="flex justify-center mt-12">
+                <div id="current-alphabet"
+                    class="artboard artboard-horizontal phone-6 border-[#010313AD] border-[20px] rounded-xl bg-[#FFFFFFBD] text-9xl font-bold flex items-center justify-center text-black uppercase">
+                    y</div>
+            </div>
+            <!--Keyboard-->
+            <div class="mt-10">
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="q" class="kbd">q</kbd>
+                    <kbd id="w" class="kbd">w</kbd>
+                    <kbd id="e" class="kbd">e</kbd>
+                    <kbd id="r" class="kbd">r</kbd>
+                    <kbd id="t" class="kbd">t</kbd>
+                    <kbd id="y" class="kbd">y</kbd>
+                    <kbd id="u" class="kbd">u</kbd>
+                    <kbd id="i" class="kbd">i</kbd>
+                    <kbd id="o" class="kbd">o</kbd>
+                    <kbd id="p" class="kbd">p</kbd>
+                </div>
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="a" class="kbd">a</kbd>
+                    <kbd id="s" class="kbd">s</kbd>
+                    <kbd id="d" class="kbd">d</kbd>
+                    <kbd id="f" class="kbd">f</kbd>
+                    <kbd id="g" class="kbd">g</kbd>
+                    <kbd id="h" class="kbd">h</kbd>
+                    <kbd id="j" class="kbd">j</kbd>
+                    <kbd id="k" class="kbd">k</kbd>
+                    <kbd id="l" class="kbd">l</kbd>
+                </div>
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="z" class="kbd">z</kbd>
+                    <kbd id="x" class="kbd">x</kbd>
+                    <kbd id="c" class="kbd">c</kbd>
+                    <kbd id="v" class="kbd">v</kbd>
+                    <kbd id="b" class="kbd">b</kbd>
+                    <kbd id="n" class="kbd">n</kbd>
+                    <kbd id="m" class="kbd">m</kbd>
+                    <kbd class="kbd">/</kbd>
+                </div>
+            </div>
+            <!--Score-->
+            <div class="flex justify-around mt-12">
+                <button class="btn text-2xl text-white rounded-full px-5 bg-[#894189] border-none">
+                    LIFE
+                    <img src="images/heart.png" alt="">
+                    <span id="current-life">5</span>
+                </button>
+                <!--score-->
+                <button class="btn text-2xl text-white rounded-full px-5 bg-[#360490] border-none">
+                    SCORE
+                    <img src="images/dolar.png" alt="">
+                    <span id="current-score">0</span>
+                </button>
+            </div>
+        </section>
+        <section id="score" class="hidden">
+            <div class="flex flex-col items-center justify-center min-h-screen">
+                <div class="flex justify-center items-center flex-col bg-gradient-to-r from-purple-500 text-white to-pink-500 rounded-lg gap-5 p-12">
+                    <h1 class="text-5xl font-bold">Score : 14</h1>
+                    <button onclick="start()" class="btn text-xl text-white">Play Again</button>
+                    <p class="text-xl">Practice will Make you pro</p>
+                </div>
+               
+            </div>
+        </section>
+
+    </main>
+
     <script src="script/reuse.js"></script>
     <script src="script/all.js"></script>
 </body>
+
 </html>
